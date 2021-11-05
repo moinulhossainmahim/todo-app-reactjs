@@ -23,13 +23,18 @@
 	--Bright-Blue: hsl(220, 98%, 61%);
 	--todo-item-bg-color: hsl(0, 0%, 100%);
 	--dark-Grayish-Blue: hsl(234, 11%, 52%);
+	--check-Background: linear-gradient(
+		to right,
+		hsl(192, 100%, 67%),
+		hsl(280, 87%, 65%)
+	);
 }
 
 .dark-theme {
 	--disk-color: hsl(237, 14%, 26%);
 	--input-text-color: hsl(236, 9%, 61%);
 	--input-item-bg-color: hsl(235, 24%, 19%);
-	--todo-p: hsl(236, 9%, 61%);
+	--todo-p: hsl(236, 9%, 80%);
 	--cross-btn: hsl(236, 9%, 61%);
 	--todo-bottom-portion: hsl(235, 21%, 11%);
 	--input-focus-color: hsl(220, 98%, 61%);
@@ -40,6 +45,11 @@
 	--todo-item-bg-color: hsl(235, 24%, 19%);
 	--input-focus-color: hsl(220, 98%, 61%);
 	--dark-Grayish-Blue: hsl(236, 9%, 61%);
+	--check-Background: linear-gradient(
+		to right,
+		hsl(192, 100%, 67%),
+		hsl(280, 87%, 65%)
+	);
 }
 
 body {
@@ -78,7 +88,7 @@ body {
 	top: 10%;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 25rem;
+	width: 30rem;
 	max-width: 80vw;
 }
 
@@ -140,6 +150,8 @@ body {
 	flex-direction: column;
 	z-index: 2;
 	margin-top: -2rem;
+	width: 30rem;
+	max-width: 80vw;
 }
 
 .todo-item:first-child {
@@ -182,8 +194,6 @@ body {
 }
 
 .todo-item {
-	width: 25rem;
-	max-width: 80vw;
 	height: 3.3rem;
 	display: grid;
 	grid-template-columns: auto 1fr auto;
@@ -213,6 +223,18 @@ body {
 .btn.btn-all {
 	color: var(--Bright-Blue);
 	font-weight: 700;
+}
+
+.disk-btn.check-btn {
+	background-image: var(--check-Background);
+}
+
+.disk-btn.check-btn img {
+	opacity: 2;
+}
+
+.disk-btn img {
+	opacity: -1;
 }
 
 @media (max-width: 567px) {
