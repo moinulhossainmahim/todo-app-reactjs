@@ -76,7 +76,7 @@ body {
 }
 
 .todo-bottom-portion {
-	height: calc(100vh - 33vh);
+	min-height: calc(100vh - 33vh);
 	background-color: var(--todo-bottom-portion);
 	display: flex;
 	justify-content: center;
@@ -223,18 +223,6 @@ body {
 .btn.btn-all {
 	color: var(--Bright-Blue);
 	font-weight: 700;
-}
-
-.disk-btn.check-btn {
-	background-image: var(--check-Background);
-}
-
-.disk-btn.check-btn img {
-	opacity: 2;
-}
-
-.disk-btn img {
-	opacity: -1;
 }
 
 @media (max-width: 567px) {
