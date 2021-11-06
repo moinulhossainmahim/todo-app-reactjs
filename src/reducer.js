@@ -23,5 +23,44 @@ export const reducer = (state, action) => {
 		})
 		return { ...state, todoList: newItemList }
 	}
+	if (action.type === 'CLEAR_COMPLETED_TODOS') {
+		const newTodoList = state.todoList.filter(
+			(todo) => todo.isDone === false
+		)
+		return { ...state, todoList: newTodoList }
+	}
+	if (action.type === 'SHOW_ALL_TODOS') {
+		return {
+			...state,
+			todoList: state.todoList,
+			isShowAll: true,
+			isShowActive: false,
+			isShowCompleted: false,
+		}
+	}
+	if (action.type === 'SHOW_ACTIVE_TODOS') {
+		const activeTodos = state.todoList.filter(
+			(todo) => todo.isDone === false
+		)
+		return {
+			...state,
+			active: activeTodos,
+			isShowActive: true,
+			isShowAll: false,
+			isShowCompleted: false,
+		}
+	}
+	if (action.type === 'SHOW_COMPLETED_TODOS') {
+		const completedTodos = state.todoList.filter(
+			(todo) => todo.isDone === true
+		)
+		return {
+			...state,
+			completed: completedTodos,
+			isShowActive: false,
+			isShowAll: false,
+			isShowCompleted: true,
+		}
+	}
 	return state
 }

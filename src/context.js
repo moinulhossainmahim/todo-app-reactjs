@@ -13,7 +13,12 @@ const getLocalStroage = () => {
 
 const initialState = {
 	todoList: [],
+	active: [],
+	completed: [],
 	theme: getLocalStroage(),
+	isShowAll: true,
+	isShowActive: false,
+	isShowCompleted: false,
 }
 
 const AppProvider = ({ children }) => {
@@ -43,6 +48,22 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: 'HANDLE_COMPLETED', payload: id })
 	}
 
+	const clearCompletedTodo = () => {
+		dispatch({ type: 'CLEAR_COMPLETED_TODOS' })
+	}
+
+	const showAllTodos = () => {
+		dispatch({ type: 'SHOW_ALL_TODOS' })
+	}
+
+	const showActiveTodos = () => {
+		dispatch({ type: 'SHOW_ACTIVE_TODOS' })
+	}
+
+	const showCompletedTodos = () => {
+		dispatch({ type: 'SHOW_COMPLETED_TODOS' })
+	}
+
 	useEffect(() => {
 		document.documentElement.classList = state.theme
 		localStorage.setItem('theme', state.theme)
@@ -58,6 +79,10 @@ const AppProvider = ({ children }) => {
 				handleSubmit,
 				removeSingleTodo,
 				handleCompleted,
+				clearCompletedTodo,
+				showAllTodos,
+				showActiveTodos,
+				showCompletedTodos,
 			}}
 		>
 			{children}

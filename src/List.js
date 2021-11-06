@@ -3,8 +3,8 @@ import { useGlobalContext } from './context'
 import crossIcon from './assets/images/icon-cross.svg'
 import checkIcon from './assets/images/icon-check.svg'
 
-function List() {
-	const { todoList, removeSingleTodo, handleCompleted } = useGlobalContext()
+function List({ todoList }) {
+	const { removeSingleTodo, handleCompleted } = useGlobalContext()
 	return todoList.map((todo) => {
 		const { id, itemName, isDone } = todo
 		return (
@@ -13,7 +13,7 @@ function List() {
 					className={isDone ? 'disk-btn check-btn' : 'disk-btn'}
 					onClick={() => handleCompleted(id)}
 				>
-					{isDone && <img src={checkIcon} />}
+					{isDone && <img src={checkIcon} alt='check-icon' />}
 				</button>
 				<p
 					className={
