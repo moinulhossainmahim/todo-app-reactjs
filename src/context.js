@@ -29,6 +29,7 @@ const AppProvider = ({ children }) => {
 		const newTodoList = {
 			id: new Date().getTime().toString(),
 			itemName: todoName,
+			isDone: false,
 		}
 		dispatch({ type: 'ADD_TODO_ITEM', payload: newTodoList })
 		setTodoName('')
@@ -36,6 +37,10 @@ const AppProvider = ({ children }) => {
 
 	const removeSingleTodo = (id) => {
 		dispatch({ type: 'REMOVE_SINGLE_TODO', payload: id })
+	}
+
+	const handleCompleted = (id) => {
+		dispatch({ type: 'HANDLE_COMPLETED', payload: id })
 	}
 
 	useEffect(() => {
@@ -52,6 +57,7 @@ const AppProvider = ({ children }) => {
 				handleTheme,
 				handleSubmit,
 				removeSingleTodo,
+				handleCompleted,
 			}}
 		>
 			{children}

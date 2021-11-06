@@ -54,7 +54,9 @@ function App() {
 					<div className='todo-list-container'>
 						<List />
 						<div className='todo-item todo-item-details'>
-							<p>{todoList.length} items left</p>
+							<p className='left-item'>
+								{todoList.length} items left
+							</p>
 							<button className='btn btn-clear-completed'>
 								Clear Completed
 							</button>

@@ -14,5 +14,14 @@ export const reducer = (state, action) => {
 		)
 		return { ...state, todoList: newTodoList }
 	}
+	if (action.type === 'HANDLE_COMPLETED') {
+		const newItemList = state.todoList.map((todo) => {
+			if (todo.id === action.payload) {
+				return { ...todo, isDone: !todo.isDone }
+			}
+			return todo
+		})
+		return { ...state, todoList: newItemList }
+	}
 	return state
 }

@@ -13,7 +13,7 @@
 	--disk-color: hsl(236, 33%, 92%);
 	--input-text-color: hsl(234, 11%, 52%);
 	--input-item-bg-color: hsl(0, 0%, 100%);
-	--todo-p: hsl(234, 11%, 52%);
+	--todo-p: hsl(234, 11%, 42%);
 	--cross-btn: hsl(236, 9%, 61%);
 	--todo-bottom-portion: hsl(236, 33%, 92%);
 	--input-focus-color: hsl(220, 98%, 61%);
@@ -28,6 +28,8 @@
 		hsl(192, 100%, 67%),
 		hsl(280, 87%, 65%)
 	);
+	--todo-done: hsl(236, 9%, 61%);
+	--left-item: hsl(236, 9%, 61%);
 }
 
 .dark-theme {
@@ -50,6 +52,8 @@
 		hsl(192, 100%, 67%),
 		hsl(280, 87%, 65%)
 	);
+	--left-item: hsl(236, 9%, 61%);
+	--todo-done: hsl(236, 9%, 61%);
 }
 
 body {
@@ -163,7 +167,7 @@ body {
 	border-bottom-right-radius: 0.4em;
 }
 
-.todo-item > p {
+.todo-single-item {
 	color: var(--todo-p);
 }
 
@@ -223,6 +227,19 @@ body {
 .btn.btn-all {
 	color: var(--Bright-Blue);
 	font-weight: 700;
+}
+
+.disk-btn.check-btn {
+	background-image: var(--check-Background);
+}
+
+.todo-single-item.done {
+	text-decoration: line-through;
+	color: var(--todo-done);
+}
+
+.left-item {
+	color: var(--left-item);
 }
 
 @media (max-width: 567px) {
