@@ -76,11 +76,11 @@ body {
 
 .todo-top-portion {
 	position: relative;
-	height: 33vh;
+	height: 40vh;
 }
 
 .todo-bottom-portion {
-	min-height: calc(100vh - 33vh);
+	min-height: calc(100vh - 40vh);
 	background-color: var(--todo-bottom-portion);
 	display: flex;
 	justify-content: center;
