@@ -62,42 +62,6 @@ function App() {
 				{isShowAll && <AllTodos />}
 				{isShowActive && <ActiveTodos />}
 				{isShowCompleted && <CompletedTodos />}
-				{/* {todoList.length > 0 && (
-					<div className='todo-list-container'>
-						<List />
-						<div className='todo-item todo-item-details'>
-							<p className='left-item'>
-								{todoList.length} items left
-							</p>
-							<button
-								className='btn btn-clear-completed'
-								onClick={clearCompletedTodo}
-							>
-								Clear Completed
-							</button>
-							<div className='btn-container'>
-								<button
-									className='btn btn-all'
-									onClick={showAllTodos}
-								>
-									All
-								</button>
-								<button
-									className='btn btn-active'
-									onClick={showActiveTodos}
-								>
-									Active
-								</button>
-								<button
-									className='btn btn-completed'
-									onClick={showCompletedTodos}
-								>
-									Completed
-								</button>
-							</div>
-						</div>
-					</div>
-				)} */}
 			</div>
 		</main>
 	)
