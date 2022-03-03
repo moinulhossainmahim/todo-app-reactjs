@@ -21,16 +21,6 @@ type AppContextProps = {
 
 const AppContext = React.createContext({} as AppContextProps);
 
-// const initialState = {
-//   todoList: [],
-//   active: [],
-//   completed: [],
-//   theme: getLocalStroage(),
-//   isShowAll: true,
-//   isShowActive: false,
-//   isShowCompleted: false,
-// };
-
 const AppProvider = ({ children }: AppProviderProps) => {
   const [todoName, setTodoName] = useState("");
   const [state, dispatch] = useReducer(reducer, initialState);
